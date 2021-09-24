@@ -1,0 +1,35 @@
+<header class="header nav__menu-page" id="header">
+    <nav class="nav container">
+        <a href="{{ path('home') }}" class="nav__logo">La Garde Robe</a>
+
+        <div class="nav__menu" id="nav-menu">
+            <ul class="nav__list">
+                <li>
+                    {# <a href="{{ path('products') }}" class="nav__link">Les produits</a> #}
+                </li>
+                <li>
+                    <a href="#" class="nav__link">Nous contacter</a>
+                </li>
+                <li>
+                    {% if app.user %}
+                        <a href="{# {{ path('account') }} #}" class="nav__link">Mon compte</a>
+                        |
+                        <a href=" {{ path('app_logout') }} " class="nav__link">Déconnexion</a>
+                    {% else %}
+                        <a href="{{ path('app_register') }}" class="nav__link">Inscription</a>
+                        |
+                        <a href="{{ path('app_login') }}" class="nav__link">Connexion</a>
+                    {% endif %}
+                </li>
+            </ul>
+
+            <i class="uil uil-times nav__close" id="nav-close"></i>
+        </div>
+
+        <a href="#" class="nav__cart"><i class="uil uil-shopping-bag"></i></a>
+
+        <div class="nav__toggle" id="nav-toggle">
+            <i class="uil uil-bars"></i>
+        </div>
+    </nav>
+</header>
